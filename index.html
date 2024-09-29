@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="logo col-6 col-sm-6 col-md-6 col-xl-6">
             <img src="img/weather forecast logo.png" class="img-fluid" alt="" srcset="" width="80rem" height="80rem">
@@ -20,14 +21,196 @@
         </div>
         <div class="search_pannel col-md-6 col-sm-6 col-xl-6 col-6">
             <div class="search_bar">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 search_svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                  </svg>
-                               
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6 search_svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+
                 <input type="text" id="txtsearch" placeholder="Search weather">
             </div>
         </div>
     </header>
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <div class="main_weather col-12 col-xl-6">
+                <div class="display_box">
+                    <div class="weather_status_image_box mt-1 mb-2">
+                        <img src="img/sun.png" alt="" width="150px" height="150px">
+                    </div>
+                    <div class="weather_details text-center mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-map-pin" style="stroke: #a1a2ab;">
+                            <path
+                                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <label id="city_name" for="city_name">Colombo</label><br>
+                        <label id="country_name" for="country">Sri Lanka</label><br>
+
+                        <div class="temperature d-flex justify-content-center">
+                            <label id="main_temparature" for="main_temparature">35 <span>℃</span> </label>
+                            <div class="m-1">
+                                <label id="sub_main_temparature" for="sub_main_temparature"> 35 <span>℃</span>
+                                </label><br>
+                                <label id="temparature_feel_like" for="temparature_feel_like">21 <span>℃</span>
+                                </label><br>
+                            </div>
+                        </div>
+
+                        <label id="status" for="status">Sunny</label><br>
+                        <label id="date" for="date">Monday,Spetember 31,2024</label>
+                    </div>
+                </div>
+                <div class="d-flex">
+
+                    <div class="sun_rise_box text-center mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sunrise">
+                            <path d="M12 2v8" />
+                            <path d="m4.93 10.93 1.41 1.41" />
+                            <path d="M2 18h2" />
+                            <path d="M20 18h2" />
+                            <path d="m19.07 10.93-1.41 1.41" />
+                            <path d="M22 22H2" />
+                            <path d="m8 6 4-4 4 4" />
+                            <path d="M16 18a4 4 0 0 0-8 0" />
+                        </svg>
+                        <br>
+                        <span>Sun Rise</span>
+                        <div class="text-center">
+                            <label id="sun_rise_time" for="sun_set">05:59 AM</label>
+                        </div>
+                    </div>
+
+                    <div class="sun_set_box text-center mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sunset">
+                            <path d="M12 10V2" />
+                            <path d="m4.93 10.93 1.41 1.41" />
+                            <path d="M2 18h2" />
+                            <path d="M20 18h2" />
+                            <path d="m19.07 10.93-1.41 1.41" />
+                            <path d="M22 22H2" />
+                            <path d="m16 6-4 4-4-4" />
+                            <path d="M16 18a4 4 0 0 0-8 0" />
+                        </svg>
+                        <br>
+                        <span>Sun Set</span>
+                        <div class="text-center">
+                            <label id="sun_set_time" for="sun_set">06:03 PM</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="other_details col-12 col-xl-6 d-grid mt-md-5 mt-3 mt-lg-0">
+
+                <div class="wind_speed_box mt-1 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-wind" style="stroke: #a1a2ab;">
+                        <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" />
+                        <path d="M9.6 4.6A2 2 0 1 1 11 8H2" />
+                        <path d="M12.6 19.4A2 2 0 1 0 14 16H2" />
+                    </svg>
+                    <label class="">Wind Speed</label>
+                    <hr class="hr mt-0">
+                    <div class="mt-4">
+                        <label id="wind_speed_value" for="wind_speed_value">7<span>km/h</span></label>
+                    </div>
+                </div>
+
+                <div class="humidity_box mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-droplets" style="stroke: #a1a2ab;">
+                        <path
+                            d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
+                        <path
+                            d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
+                    </svg>
+                    <label class="mt-1">Humidity</label>
+                    <hr class="hr mt-0">
+                    <div class="mt-4">
+                        <label id="humidity_value" for="humidity_value">34<span>%</span></label>
+                    </div>
+                </div>
+
+                <div class="cloud_cover_box mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-cloudy" style="stroke: #a1a2ab;">
+                        <path d="M17.5 21H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                        <path d="M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5" />
+                    </svg>
+                    <label class="mt-1">Cloud Cover</label>
+                    <hr class="hr mt-0">
+                    <div class="mt-4">
+                        <label id="cloud_cover_value" for="cloud_cover_value">67<span>%</span></label>
+                    </div>
+                </div>
+
+                <div class="uv_index_box mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-sun-dim" style="stroke: #a1a2ab;">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 4h.01" />
+                        <path d="M20 12h.01" />
+                        <path d="M12 20h.01" />
+                        <path d="M4 12h.01" />
+                        <path d="M17.657 6.343h.01" />
+                        <path d="M17.657 17.657h.01" />
+                        <path d="M6.343 17.657h.01" />
+                        <path d="M6.343 6.343h.01" />
+                    </svg>
+                    <label class="mt-1">UV Index</label>
+                    <hr class="hr mt-0">
+                    <div class="mt-4">
+                        <label id="uv_index_value" for="uv_index_value">0 (Low)</label>
+                    </div>
+                </div>
+
+                <div class="pressure_box mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-gauge" style="stroke: #a1a2ab;">
+                        <path d="m12 14 4-4" />
+                        <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                    </svg>
+                    <label class="mt-1">Pressure</label>
+                    <hr class="hr mt-0">
+                    <div class="mt-4">
+                        <label id="pressure_value" for="pressure_value">1010 <span>hPa</span></label>
+                    </div>
+                </div>
+
+                <div class="visibility_box mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-eye" style="stroke: #a1a2ab;">
+                        <path
+                            d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <label class="mt-1">Visibility</label>
+                    <hr class="hr mt-0">
+                    <div class="mt-4">
+                        <label id="visibility_value" for="visibility_value">10 <span>km</span></label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
     <script src="index.js"></script>
