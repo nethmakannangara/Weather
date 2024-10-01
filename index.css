@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 body {
     background-color: #111015;
@@ -138,7 +140,7 @@ header {
 }
 
 #country_name {
-    font-size: 19px;
+    font-size: 20px;
 }
 
 #main_temparature {
@@ -154,12 +156,12 @@ header {
 }
 
 #status {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 450;
 }
 
 #date {
-    font-size: 18px;
+    font-size: 19px;
 }
 
 .sun_rise_box,
@@ -175,6 +177,7 @@ header {
     font-optical-sizing: auto;
     font-weight: 800;
     font-size: 25px;
+    cursor: context-menu;
     color: #111015;
 }
 
@@ -223,4 +226,101 @@ header {
     font-weight: 350;
     font-size: 23px;
     color: #E5E5E5;
+}
+
+.hourly_forecast {
+    padding: 2px;
+    border-radius: 0.3rem;
+    opacity: o.5;
+    background-color: #29282C;
+}
+
+.lbl_hourly_forecast {
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    color: #E5E5E5;
+}
+
+.hr-1 {
+    width: 95%;
+    color: #E5E5E5;
+    margin: auto;
+}
+
+.fisrt_hour,
+.second_hour,
+.third_hour,
+.fourth_hour,
+.fiveth_hour,
+.sixth_hour {
+    width: 80%;
+    min-width: 175px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    text-align: center;
+    border: #8fe0ff 1px solid;
+    border-radius: 5px 20px;
+}
+
+#first_hour_value,
+.first_hour_status,
+#second_hour_value,
+.second_hour_status,
+#third_hour_value,
+.third_hour_status,
+#fourth_hour_value,
+.fourth_hour_status,
+#fiveth_hour_value,
+.fiveth_hour_status,
+#sixth_hour_value,
+.sixth_hour_status {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    color: #E5E5E5;
+
+}
+
+.first_hour_temperature,
+.second_hour_temperature,
+.third_hour_temperature,
+.fourth_hour_temperature,
+.fiveth_hour_temperature,
+.sixth_hour_temperature {
+    font-family: "Varela Round", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 30px;
+    color: #E5E5E5;
+}
+
+#first_hour_value,
+#second_hour_value,
+#third_hour_value,
+#fourth_hour_value,
+#fiveth_hour_value,
+#sixth_hour_value {
+    font-size: 19px;
+}
+
+.first_hour_status,
+.second_hour_status,
+.third_hour_status,
+.fourth_hour_status,
+.fiveth_hour_status,
+.sixth_hour_status {
+    font-size: 19px;
+}
+
+.fisrt_hour span,
+.second_hour span,
+.third_hour span,
+.fourth_hour span,
+.fiveth_hour span,
+.sixth_hour span {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 30px;
 }

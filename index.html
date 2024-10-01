@@ -13,7 +13,7 @@
 <body>
 
     <header>
-        <div class="logo col-6 col-sm-6 col-md-6 col-xl-6">
+        <div class="logo col-6 col-sm-6 col-md-6 col-xl-6 ">
             <img src="img/weather forecast logo.png" class="img-fluid" alt="" srcset="" width="80rem" height="80rem">
             <div class="title col-md-5 col-sm-3">
                 <p>WEATHER FORECAST</p>
@@ -39,7 +39,7 @@
             <div class="main_weather col-12 col-xl-6">
                 <div class="display_box">
                     <div class="weather_status_image_box mt-1 mb-2">
-                        <img src="img/sun.png" alt="" width="150px" height="150px">
+                        <img id="main_status_image" src="img/sun.png" alt="" width="150px" height="150px">
                     </div>
                     <div class="weather_details text-center mt-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
@@ -84,7 +84,7 @@
                         <br>
                         <span>Sun Rise</span>
                         <div class="text-center">
-                            <label id="sun_rise_time" for="sun_set">05:59 AM</label>
+                            <label id="sun_rise_time" for="sun_rise">05:59 AM</label>
                         </div>
                     </div>
 
@@ -111,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="other_details col-12 col-xl-6 d-grid mt-md-5 mt-3 mt-lg-0">
+            <div class="other_details col-12 col-xl-6 d-grid mt-md-5 mt-3 mt-lg-3 mt-xl-0">
 
                 <div class="wind_speed_box mt-1 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
@@ -124,7 +124,7 @@
                     <label class="">Wind Speed</label>
                     <hr class="hr mt-0">
                     <div class="mt-4">
-                        <label id="wind_speed_value" for="wind_speed_value">7<span>km/h</span></label>
+                        <label id="wind_speed_value" for="wind_speed_value">7<span> km/h</span></label>
                     </div>
                 </div>
 
@@ -212,6 +212,75 @@
         </div>
     </div>
 
+    <div class="container mt-5 mb-3">
+
+        <div class="row">
+
+            <div class="hourly_forecast col-sm-12 col-12 col-xl-12 col-lg-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-clock" style="stroke: #a1a2ab; margin-left: 10px;">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <label class="lbl_hourly_forecast" for="">HOURLY FORECAST</label>
+                <hr class="hr-1 mt-2 mb-4">
+
+                <div class="d-grid text-center col-12" style="grid-template-columns: repeat(6,1fr); overflow:scroll ;">
+
+                    <div class="fisrt_hour">
+                        <label id="first_hour_value" for="first_hour_value">3.00 AM</label><br>
+                        <label class="first_hour_temperature" id="hour[3]_temperature" for="first_hour_temperature">24 <span>℃</span></label><br>
+                        <img class="first_hour_status_image" id="hour[3]_status_image" src="img/cloudy.png" alt="" width="90px" height="90px"><br>
+                        <label class="first_hour_status" id="hour[3]_status" for="first_hour_status">Cloudy</label>
+                    </div>
+
+                    <div class="second_hour">
+                        <label id="second_hour_value" for="second_hour_value">7.00 AM</label><br>
+                        <label class="second_hour_temperature" id="hour[7]_temperature" for="second_hour_temperature">26 <span>℃</span></label><br>
+                        <img class="second_hour_status_image" id="hour[7]_status_image" src="img/rain (1).png" alt="" width="90px" height="90px"><br>
+                        <label class="second_hour_status" id="hour[7]_status" for="second_hour_status">Raniny</label>
+                    </div>
+
+                    <div class="third_hour">
+                        <label id="third_hour_value" for="third_hour_value">11.00 AM</label><br>
+                        <label class="third_hour_temperature" id="hour[11]_temperature" for="third_hour_temperature">28 <span>℃</span></label><br>
+                        <img class="third_hour_status_image" id="hour[11]_status_image" src="img/sun.png" alt="" width="90px" height="90px"><br>
+                        <label class="third_hour_status" id="hour[11]_status" for="third_hour_status">Raniny</label>
+                    </div>
+
+                    <div class="fourth_hour">
+                        <label id="fourth_hour_value" for="fourth_hour_value">3.00 PM</label><br>
+                        <label class="fourth_hour_temperature" id="hour[15]_temperature" for="fourth_hour_temperature">25 <span>℃</span></label><br>
+                        <img class="fourth_hour_status_image" id="hour[15]_status_image" src="img/rain (1).png" alt="" width="90px" height="90px"><br>
+                        <label class="fourth_hour_status" id="hour[15]_status" for="fourth_hour_status">Raniny</label>
+                    </div>
+
+                    <div class="fiveth_hour">
+                        <label id="fiveth_hour_value" for="fiveth_hour_value">7.00 PM</label><br>
+                        <label class="fiveth_hour_temperature" id="hour[19]_temperature" for="fiveth_hour_temperature">25 <span>℃</span></label><br>
+                        <img class="fiveth_hour_status_image" id="hour[19]_status_image" src="img/cloudy-night.png" alt="" width="90px"
+                            height="90px"><br>
+                        <label class="fiveth_hour_status" id="hour[19]_status" for="fiveth_hour_status">Cloudy</label>
+                    </div>
+
+                    <div class="sixth_hour">
+                        <label id="sixth_hour_value" for="sixth_hour_value">11.00 PM</label><br>
+                        <label class="sixth_hour_temperature" id="hour[23]_temperature" for="sixth_hour_temperature">24 <span>℃</span></label><br>
+                        <img class="sixth_hour_status_image" id="hour[23]_status_image" src="img/cloudy-night.png" alt="" width="90px"
+                            height="90px"><br>
+                        <label class="sixth_hour_status" id="hour[23]_status" for="sixth_hour_status">Cloudy</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <img src="" alt="" srcset="">
 
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
