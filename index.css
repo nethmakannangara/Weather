@@ -229,10 +229,11 @@ header {
 }
 
 .hourly_forecast {
-    padding: 2px;
+    padding: 10px;
     border-radius: 0.3rem;
     opacity: o.5;
     background-color: #29282C;
+    margin: 2px;
 }
 
 .lbl_hourly_forecast {
@@ -255,7 +256,7 @@ header {
 .fiveth_hour,
 .sixth_hour {
     width: 80%;
-    min-width: 175px;
+    min-width: 165px;
     margin-bottom: 15px;
     margin-left: 15px;
     text-align: center;
@@ -323,4 +324,37 @@ header {
     font-optical-sizing: auto;
     font-weight: 400;
     font-size: 30px;
+}
+
+.day_forecast{
+    background-color: white;
+}
+
+.first_day{
+    width: 100%;
+}
+
+.column_1,
+.column_5,
+.column_6{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    background-color: #8fe0ff;
+}
+
+.column_1{
+    font-size: 19px;
+}
+
+.column_5,
+.column_6{
+    font-size: 16px;
+}
+
+.column_2{
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
 }

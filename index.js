@@ -29,6 +29,7 @@ getCity = () => {
     let city = document.getElementById("txtsearch").value;
     console.log(city);
     apiCall(city);
+    callDailyForecast(city);
 }
 
 apiCall = async (city) => {
@@ -127,40 +128,40 @@ setStatusImage = (status, image_status) => {
             break;
         case "//cdn.weatherapi.com/weather/64x64/day/302.png":
             image_status.src = "img/moderate rain day.png";
-            break;     
+            break;
         case "//cdn.weatherapi.com/weather/64x64/night/116.png":
             image_status.src = "img/partly_cloudy-night.png";
             break;
         case "//cdn.weatherapi.com/weather/64x64/day/113.png":
             image_status.src = "img/Sunny.png";
             break;
-        case "//cdn.weatherapi.com/weather/64x64/night/113.png" :
+        case "//cdn.weatherapi.com/weather/64x64/night/113.png":
             image_status.src = "img/clear night.png";
             break;
-        case "//cdn.weatherapi.com/weather/64x64/night/119.png" :
+        case "//cdn.weatherapi.com/weather/64x64/night/119.png":
             image_status.src = "img/cloudy-night.png";
             break;
-        case "//cdn.weatherapi.com/weather/64x64/night/353.png" :
+        case "//cdn.weatherapi.com/weather/64x64/night/353.png":
             image_status.src = "img/light rain shower night.png";
             break;
-        case "" :
+        case "//cdn.weatherapi.com/weather/64x64/night/143.png":
+            image_status.src = "img/mist.png";
+            break;
+        case "//cdn.weatherapi.com/weather/64x64/day/122.png":
+            image_status.src = "img/overcast day.png";
+            break;
+        case "":
             image_status.src = "";
             break;
-        case "" :
+        case "":
             image_status.src = "";
             break;
-        case "" :
+        case "":
             image_status.src = "";
             break;
-        case "" :
-            image_status.src = "";
-            break;
-        case "" :
-            image_status.src = "";
-            break;
-        
-                   
-    }    
+
+
+    }
 }
 
 setHourlyForecast = async (data) => {
@@ -184,4 +185,66 @@ setHourlyForecast = async (data) => {
 
 }
 
+// const format = {
+//     weekday: 'long',
+//     year: 'numeric',
+//     month: 'long',
+//     day: 'numeric'
+// };
+
+// const formatter = new Intl.DateTimeFormat('en-US', format);
+
+// for (let i = 0; i < 7; i++) {
+//     const date = new Date();
+//     date.setDate(date.getDate() + i);  // Move to the next day
+//     console.log(formatter.format(date)); // Format and log the date
+// }
+
+callDailyForecast = async (city_name) => {
+    const tempUrl = `http://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city_name}&days=7&aqi=no&alerts=no`;
+
+    await fetch(tempUrl)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setDayForecast(data);
+        }
+        );
+}
+
+setDayForecast = async (data) => {
+    const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    for (let index = 1; index < 7; index++) {
+        var day_id = `day[${index}]`;
+        let daylyForecast_day = document.getElementById(day_id);
+        const date = new Date();
+        date.setDate(date.getDate() + index)
+        daylyForecast_day.innerText = weekDay[date.getDay()];
+    }
+
+    for (let i = 0; i < 7; i++) {
+
+        let id_avgHumidity = `day[${i}]_avg_humidity`;
+        let id_dayTemp = `day[${i}]_day_temperature`;
+        let id_nightTemp = `day[${i}]_night_temperature`;
+        let id_dayStatus = `day[${i}]_day_status`;
+        let id_nightStatus = `day[${i}]_night_status`;
+
+        const day_avg_humidity = document.getElementById(id_avgHumidity);
+        const day_temperature = document.getElementById(id_dayTemp);
+        const night_temperature = document.getElementById(id_nightTemp);
+        const day_status = document.getElementById(id_dayStatus);
+        const night_status = document.getElementById(id_nightStatus);
+
+        day_avg_humidity.innerText = data.forecast.forecastday[i].day.avghumidity + "%";
+        day_temperature.innerText = parseInt(data.forecast.forecastday[i].day.maxtemp_c, 10);
+        night_temperature.innerText = parseInt(data.forecast.forecastday[i].day.mintemp_c, 10);
+
+        setStatusImage(data.forecast.forecastday[i].hour[6].condition.icon, day_status);
+        setStatusImage(data.forecast.forecastday[i].hour[12].condition.icon, night_status)
+    }
+}
+
 apiCall("Matugama");
+callDailyForecast("Matugama");
