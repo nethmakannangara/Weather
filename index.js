@@ -12,10 +12,13 @@ const format = {
 };
 
 //----------------------------------------//
+
 let current_date = document.getElementById("date").innerText = date.toLocaleDateString(`en-US`, format);
 
 let main_status_image = document.getElementById("main_status_image");
 let api_key = "6a26070bc5a94f398e6133930242909";
+
+//-------------GET INPUT EVENT-----------//
 
 let input = document.getElementById("txtsearch");
 
@@ -32,6 +35,8 @@ getCity = () => {
     callDailyForecast(city);
 }
 
+//-------------API CALL-----------------// 
+
 apiCall = async (city) => {
     var url = `http://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city}&days=1&aqi=no&alerts=no`;
     await fetch(url).
@@ -44,6 +49,8 @@ apiCall = async (city) => {
         );
 
 }
+
+//------------SET DATA TO MAIN WEATHER BOX-------------//
 
 setWeather = async (data) => {
     const city = document.getElementById("city_name");
@@ -83,6 +90,8 @@ setWeather = async (data) => {
     visibility.innerHTML = data.current.vis_km + " km"
 }
 
+//----------CHECK UV LEVEL---------//
+
 checkUvLevel = (uvIndex) => {
     if (uvIndex >= 0 && uvIndex <= 2) {
         return uvIndex + "  (Low)";
@@ -96,6 +105,8 @@ checkUvLevel = (uvIndex) => {
         return uvIndex + "  (Extreme)";
     }
 }
+
+//----------SET WEATHER STATUS IMAGE---------//
 
 setStatusImage = (status, image_status) => {
     switch (status) {
@@ -164,6 +175,8 @@ setStatusImage = (status, image_status) => {
     }
 }
 
+//---------------SET HOURLY FORECAST----------------//
+
 setHourlyForecast = async (data) => {
 
     for (let index = 3; index < 24; index++) {
@@ -185,20 +198,7 @@ setHourlyForecast = async (data) => {
 
 }
 
-// const format = {
-//     weekday: 'long',
-//     year: 'numeric',
-//     month: 'long',
-//     day: 'numeric'
-// };
-
-// const formatter = new Intl.DateTimeFormat('en-US', format);
-
-// for (let i = 0; i < 7; i++) {
-//     const date = new Date();
-//     date.setDate(date.getDate() + i);  // Move to the next day
-//     console.log(formatter.format(date)); // Format and log the date
-// }
+//----------------SET DAILY FORECAST-----------------//
 
 callDailyForecast = async (city_name) => {
     const tempUrl = `http://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city_name}&days=7&aqi=no&alerts=no`;
