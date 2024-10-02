@@ -166,7 +166,8 @@ header {
 
 .sun_rise_box,
 .sun_set_box {
-    background-color: #8fe0ff;
+    background-color: #29282C;
+    border-radius: 0.2rem;
     justify-items: center;
     width: 50%;
 }
@@ -178,13 +179,13 @@ header {
     font-weight: 800;
     font-size: 25px;
     cursor: context-menu;
-    color: #111015;
+    color: #E5E5E5;
 }
 
 #sun_rise_time,
 #sun_set_time {
     font-size: 20px;
-    color: #111015;
+    color: #E5E5E5;
 }
 
 .wind_speed_box,
@@ -236,7 +237,8 @@ header {
     margin: 2px;
 }
 
-.lbl_hourly_forecast {
+.lbl_hourly_forecast,
+.lblDailyForecast {
     font-family: "Bitter", serif;
     font-optical-sizing: auto;
     font-size: 18px;
@@ -326,35 +328,49 @@ header {
     font-size: 30px;
 }
 
-.day_forecast{
-    background-color: white;
+.day_forecast {
+    background-color: #29282C;
+    border-radius: 0.4rem;
 }
 
-.first_day{
+.first_day {
     width: 100%;
 }
 
 .column_1,
 .column_5,
-.column_6{
+.column_6 {
     font-family: "Fredoka", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-optical-sizing: auto;
-    background-color: #8fe0ff;
+    color: #E5E5E5;
 }
 
-.column_1{
-    font-size: 19px;
+.column_1 {
+    font-size: 22px;
 }
 
 .column_5,
-.column_6{
-    font-size: 16px;
+.column_6 {
+    font-size: 20px;
 }
 
-.column_2{
+.column_2 {
     font-family: "Varela Round", sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
+    color: #E5E5E5;
+}
+
+.tbl_header{
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-size: 17px;
+    color: #E5E5E5;
+    padding: 10px;
+}
+
+.map_box{
+    background-color: white;
 }

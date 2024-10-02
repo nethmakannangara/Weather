@@ -71,7 +71,7 @@
                     <div class="sun_rise_box text-center mt-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-sunrise">
+                            class="lucide lucide-sunrise" style="stroke: #a1a2ab;">
                             <path d="M12 2v8" />
                             <path d="m4.93 10.93 1.41 1.41" />
                             <path d="M2 18h2" />
@@ -91,7 +91,7 @@
                     <div class="sun_set_box text-center mt-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-sunset">
+                            class="lucide lucide-sunset" style="stroke: #a1a2ab;">
                             <path d="M12 10V2" />
                             <path d="m4.93 10.93 1.41 1.41" />
                             <path d="M2 18h2" />
@@ -111,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="other_details col-12 col-xl-6 d-grid mt-md-5 mt-3 mt-lg-3 mt-xl-0">
+            <div class="other_details col-12 col-xl-6 d-grid mt-md-5 mt-5 mt-lg-4 mt-xl-0">
 
                 <div class="wind_speed_box mt-1 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
@@ -294,9 +294,9 @@
 
             <div class="day_forecast">
                 <div class="mt-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="lucide lucide-calendar-clock">
+                        class="lucide lucide-calendar-clock" style="stroke: #a1a2ab;">
                         <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" />
                         <path d="M16 2v4" />
                         <path d="M8 2v4" />
@@ -304,7 +304,7 @@
                         <path d="M17.5 17.5 16 16.3V14" />
                         <circle cx="16" cy="16" r="6" />
                     </svg>
-                    <label for="">DAILY FORECAST</label>
+                    <label class="lblDailyForecast" for="">DAILY FORECAST</label>
                     <hr class="hr-1 mt-2 mb-4">
                 </div>
                 <div class="first_day">
@@ -312,24 +312,33 @@
                     <table style="width: 80%; margin: auto; " class="mb-4">
 
                         <tr>
+                            <td></td>
+                            <td class="tbl_header text-center">Humidity</td>
+                            <td></td>
+                            <td></td>
+                            <td class="tbl_header text-center">Max Temp</td>
+                            <td class="tbl_header text-center">Min Temp</td>
+                        </tr>
+                        <hr>
+                        <tr>
                             <td class="column_1">
                                 <label for="">Today</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[0]_avg_humidity" for="">3%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[0]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[0]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[0]_day_temperature" for="">32</label><span> ℃</span>
                             </td>
-                            <td class="column_6">
+                            <td class="column_6 text-center">
                                 <label id="day[0]_night_temperature" for="">25</label><span> ℃</span>
                             </td>
                         </tr>
@@ -338,21 +347,21 @@
                             <td class="column_1">
                                 <label id="day[1]" for="">Wednesday</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[1]_avg_humidity" for="">30%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[1]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[1]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[1]_day_temperature" for="">27</label><span> ℃</span>
                             </td>
-                            <td class="column_6">
+                            <td class="column_6 text-center">
                                 <label id="day[1]_night_temperature" for="">21</label><span> ℃</span>
                             </td>
                         </tr>
@@ -361,21 +370,21 @@
                             <td class="column_1">
                                 <label id="day[2]" for="">Thursday</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[2]_avg_humidity" for="">45%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[2]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[2]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[2]_day_temperature" for="">33</label><span> ℃</span>
                             </td>
-                            <td class="column_6">
+                            <td class="column_6 text-center">
                                 <label id="day[2]_night_temperature" for="">21</label><span> ℃</span>
                             </td>
                         </tr>
@@ -384,21 +393,21 @@
                             <td class="column_1">
                                 <label id="day[3]" for="">Friday</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[3]_avg_humidity" for="">23%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[3]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[3]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[3]_day_temperature" for="">32</label><span> ℃</span>
                             </td>
-                            <td class="column_6">
+                            <td class="column_6 text-center">
                                 <label id="day[3]_night_temperature" for="">22</label><span> ℃</span>
                             </td>
                         </tr>
@@ -407,21 +416,21 @@
                             <td class="column_1">
                                 <label id="day[4]" for="">Saturday</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[4]_avg_humidity" for="">87%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[4]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[4]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[4]_day_temperature" for="">32</label><span> ℃</span>
                             </td>
-                            <td class="column_6">
+                            <td class="column_6 text-center">
                                 <label id="day[4]_night_temperature" for="">24</label><span> ℃</span>
                             </td>
                         </tr>
@@ -430,21 +439,21 @@
                             <td class="column_1">
                                 <label id="day[5]" for="">Sunday</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[5]_avg_humidity" for="">54%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[5]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[5]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[5]_day_temperature" for="">30</label><span> ℃</span>
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[5]_night_temperature" for="">27</label><span> ℃</span>
                             </td>
                         </tr>
@@ -453,21 +462,21 @@
                             <td class="column_1">
                                 <label id="day[6]" for="">Monday</label>
                             </td>
-                            <td class="column_2">
+                            <td class="column_2 text-center">
                                 <label id="day[6]_avg_humidity" for="">13%</label>
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[6]_day_status" src="img/Light drizzle day.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td>
+                            <td class="p-2">
                                 <img id="day[6]_night_status" src="img/light rain shower night.png" alt="" srcset=""
-                                    width="30px" height="30px">
+                                    width="35px" height="35px">
                             </td>
-                            <td class="column_5">
+                            <td class="column_5 text-center">
                                 <label id="day[6]_day_temperature" for="">24</label><span> ℃</span>
                             </td>
-                            <td class="column_6">
+                            <td class="column_6 text-center">
                                 <label id="day[6]_night_temperature" for="">22</label><span> ℃</span>
                             </td>
                         </tr>
@@ -481,6 +490,7 @@
 
     </div>
 
+    <hr class="hr-1 mb-4">
 
     <img src="" alt="" srcset="">
 

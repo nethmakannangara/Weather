@@ -241,8 +241,8 @@ setDayForecast = async (data) => {
         day_temperature.innerText = parseInt(data.forecast.forecastday[i].day.maxtemp_c, 10);
         night_temperature.innerText = parseInt(data.forecast.forecastday[i].day.mintemp_c, 10);
 
-        setStatusImage(data.forecast.forecastday[i].hour[6].condition.icon, day_status);
-        setStatusImage(data.forecast.forecastday[i].hour[12].condition.icon, night_status)
+        setStatusImage(data.forecast.forecastday[i].hour[8].condition.icon, day_status);
+        setStatusImage(data.forecast.forecastday[i].hour[20].condition.icon, night_status)
     }
 }
 
