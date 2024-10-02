@@ -1,8 +1,5 @@
-console.log("Project Weather App");
-
 //-------------GET CURRENT DATE------------//
 const date = new Date();
-console.log(date);  //Clear
 
 const format = {
     weekday: `long`,
@@ -38,15 +35,16 @@ getCity = () => {
 //-------------API CALL-----------------// 
 
 apiCall = async (city) => {
-    var url = `http://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city}&days=1&aqi=no&alerts=no`;
+    var url = `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city}&days=1&aqi=no&alerts=no`;
     await fetch(url).
         then(res => res.json())
         .then(data => {
-            console.log(data)
             setWeather(data);
             setHourlyForecast(data);
         }
-        );
+        ).catch(error =>{
+            console.error("Error Fetching Weather Data : "+ error);
+        });
 
 }
 
@@ -201,15 +199,17 @@ setHourlyForecast = async (data) => {
 //----------------SET DAILY FORECAST-----------------//
 
 callDailyForecast = async (city_name) => {
-    const tempUrl = `http://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city_name}&days=7&aqi=no&alerts=no`;
+    const tempUrl = `https://api.weatherapi.com/v1/forecast.json?key=${api_key}&q=${city_name}&days=7&aqi=no&alerts=no`;
 
     await fetch(tempUrl)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             setDayForecast(data);
         }
-        );
+        ).catch(error =>{
+            console.error("Error fetching Daily Forecast data : " + error);
+            
+        });
 }
 
 setDayForecast = async (data) => {
