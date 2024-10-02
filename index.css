@@ -238,7 +238,8 @@ header {
 }
 
 .lbl_hourly_forecast,
-.lblDailyForecast {
+.lblDailyForecast,
+.title_map {
     font-family: "Bitter", serif;
     font-optical-sizing: auto;
     font-size: 18px;
@@ -371,6 +372,32 @@ header {
     padding: 10px;
 }
 
+.title_map{
+    margin-top: 9px;
+}
+
 .map_box{
-    background-color: white;
+    background-color: #29282C;
+    border-radius: 0.3rem;
+}
+
+iframe{
+    width: 85%;
+    height: 500px;
+    min-height: 400px;
+    border-radius: 1em;
+    opacity: 0.7;
+    transition: 0.3s ease-in-out; 
+}
+
+iframe:hover{
+    transform: scale(1.01);
+    opacity: 1;
+}
+
+.title_map{
+    font-family: "Bitter", serif;
+    font-optical-sizing: auto;
+    font-size: 17px;
+    color: #E5E5E5; 
 }
