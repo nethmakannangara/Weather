@@ -13,7 +13,9 @@ const format = {
 let current_date = document.getElementById("date").innerText = date.toLocaleDateString(`en-US`, format);
 
 let main_status_image = document.getElementById("main_status_image");
-let api_key = "6a26070bc5a94f398e6133930242909";
+let api_key = "d96c3f1bc0a34499bcc183900241211";
+
+
 
 //-------------GET INPUT EVENT-----------//
 
@@ -68,7 +70,7 @@ setWeather = async (data) => {
     const pressure = document.getElementById("pressure_value");
     const visibility = document.getElementById("visibility_value");
 
-    setStatusImage(data.current.condition.icon, main_status_image);
+    setStatusImage(data.current.condition.icon, main_status_image);    
 
     city.innerText = data.location.name;
     country.innerText = data.location.country;
@@ -85,7 +87,7 @@ setWeather = async (data) => {
     cloud_cover.innerText = data.current.cloud + "%";
     un_index.innerText = checkUvLevel(data.current.uv);
     pressure.innerText = data.current.pressure_mb + "hPa";
-    visibility.innerHTML = data.current.vis_km + " km"
+    visibility.innerText = data.current.vis_km + " km"
 }
 
 //----------CHECK UV LEVEL---------//
@@ -108,9 +110,6 @@ checkUvLevel = (uvIndex) => {
 
 setStatusImage = (status, image_status) => {
     switch (status) {
-        case "Moderate rain at times":
-            image_status.src = "img/weather rain and sun.png"
-            break;
         case "//cdn.weatherapi.com/weather/64x64/day/176.png":
             image_status.src = "img/weather rain and sun.png";
             break;
@@ -159,17 +158,9 @@ setStatusImage = (status, image_status) => {
         case "//cdn.weatherapi.com/weather/64x64/day/122.png":
             image_status.src = "img/overcast day.png";
             break;
-        case "":
-            image_status.src = "";
+        case "//cdn.weatherapi.com/weather/64x64/night/296.png":
+            image_status.src = "img/light-rain day.png";
             break;
-        case "":
-            image_status.src = "";
-            break;
-        case "":
-            image_status.src = "";
-            break;
-
-
     }
 }
 
@@ -236,7 +227,7 @@ setDayForecast = async (data) => {
         const night_temperature = document.getElementById(id_nightTemp);
         const day_status = document.getElementById(id_dayStatus);
         const night_status = document.getElementById(id_nightStatus);
-
+``
         day_avg_humidity.innerText = data.forecast.forecastday[i].day.avghumidity + "%";
         day_temperature.innerText = parseInt(data.forecast.forecastday[i].day.maxtemp_c, 10);
         night_temperature.innerText = parseInt(data.forecast.forecastday[i].day.mintemp_c, 10);
@@ -246,5 +237,5 @@ setDayForecast = async (data) => {
     }
 }
 
-apiCall("Matugama");
+apiCall("Nuwara Eliya");
 callDailyForecast("Matugama");
